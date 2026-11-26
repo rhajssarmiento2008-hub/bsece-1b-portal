@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102a43">
+<title>BSECE-1B | Engineering Student Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="loginView" class="login-shell">
+  <section class="login-hero">
+    <div class="brand"><span class="brand-icon">∿</span><span>BSECE-1B<small>ENGINEERING STUDENT PORTAL</small></span></div>
+    <div class="hero-copy"><div class="eyebrow">LEARN · BUILD · CONNECT</div><h1>Your section's<br><em>engineering hub.</em></h1><p>Class updates, shared learning resources, and practical engineering tools in one place.</p><div class="hero-pills"><span>ECE calculators</span><span>Shared resources</span><span>Class workspace</span></div></div>
+    <div class="hero-foot">Independent student project · Not an official BulSU system</div>
+  </section>
+  <section class="login-area"><div class="login-card">
+    <div class="eyebrow blue">SECTION ACCESS</div><h2>Welcome back</h2><p class="muted">Sign in to your BSECE-1B workspace.</p>
+    <div id="connectionNotice" class="notice"></div>
+    <form id="loginForm">
+      <label>Email address<input id="email" type="email" autocomplete="username" placeholder="you@example.com" required></label>
+      <label>Password<input id="password" type="password" autocomplete="current-password" placeholder="Your password" required></label>
+      <button class="primary full" type="submit">Sign in <span>→</span></button>
+      <button class="text-btn full" id="signupBtn" type="button">Create a student account</button>
+      <div id="authMessage" class="auth-message"></div>
+    </form>
+    <div class="local-note"><strong>Preview mode</strong><br>If Supabase is not configured yet, you can enter as a local demo user. Local demo data stays in this browser and is not shared with classmates.<button id="demoBtn" class="outline full">Continue in preview mode</button></div>
+  </div></section>
+</div>
+
+<div id="appView" class="app-shell hidden">
+<header class="topbar"><button class="mobile-menu" id="mobileMenu">☰</button><a class="brand compact" href="#"><span class="brand-icon">∿</span><span>BSECE-1B<small>STUDENT PORTAL</small></span></a><div class="topbar-right"><span id="connectionPill" class="status-pill">LOCAL PREVIEW</span><div class="profile"><div class="avatar" id="avatar">S</div><div><b id="profileName">Student</b><small id="profileRole">Student</small></div></div><button id="logoutBtn" class="icon-btn" title="Sign out">↪</button></div></header>
+<div class="shell">
+<aside class="sidebar" id="sidebar"><div class="side-label">WORKSPACE</div><nav id="nav"></nav><div class="sidebar-bottom"><div class="side-card"><b>Build your fundamentals.</b><p>Practice a little every day. Keep your notes organized and help your classmates learn.</p></div><small>AY 2026–2027 · BSECE-1B</small></div></aside>
+<main id="main"></main>
+</div>
+<nav class="mobile-nav" id="mobileNav"></nav>
+</div>
+<div id="toast" class="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body></html>
